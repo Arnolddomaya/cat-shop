@@ -1,0 +1,16 @@
+<h1>Index des Items</h1>
+
+<% unless @items.empty? %>
+  <ul class:"items-list">
+    <% @items.each do |item| %>
+      <li>
+        <%=link_to item.title, item  %>
+        <%= image_tag("/cats/"+item.image_url)%>
+
+      </li>
+    <% end  %>
+  </ul>
+
+<% else %>
+  <%= "pas d'item pour l'instant" %>
+<% end  %>
