@@ -1,3 +1,5 @@
+
+
 <h1>Index des Items</h1>
 
 <% unless @items.empty? %>
@@ -5,7 +7,7 @@
     <% @items.each do |item| %>
       <li>
         <%=link_to image_tag("cats/"+item.image_url, size:"300x300"), item  %>
-        
+
 
       </li>
     <% end  %>
