@@ -1,2 +1,7 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+
+<h1><%= @item.title %></h1>
+<ul>
+  <li>titre <strong><%= @item.title %></strong>,  Prix <strong><%= @item.price %> euros</strong></li>
+  <li><%= image_tag("cats/"+@item.image_url) %></li>
+  <li>Description <strong><%= @item.description %></strong> </li>
+</ul>

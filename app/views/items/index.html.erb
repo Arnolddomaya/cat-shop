@@ -4,8 +4,8 @@
   <ul class:"items-list">
     <% @items.each do |item| %>
       <li>
-        <%=link_to item.title, item  %>
-        <%= image_tag("/cats/"+item.image_url)%>
+        <%=link_to image_tag("cats/"+item.image_url, size:"300x300"), item  %>
+        
 
       </li>
     <% end  %>
