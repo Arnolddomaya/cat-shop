@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+      @user_items = current_user.cart.items
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
