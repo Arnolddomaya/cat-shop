@@ -1,4 +1,6 @@
 <h1>Panier de <%= current_user.email %></h1>
+
+<h3>Total : <%= @totals[0] %> produits, coût <%= @totals[1] %></h3>
 <!-- liste des items -->
 <%= render "layouts/list_items" %>
 <!-- End liste des items -->

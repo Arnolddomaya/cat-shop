@@ -3,6 +3,10 @@ class PaniersController < ApplicationController
   def index
     #on recupère le contenue du pannier de current_user
     @items = current_user.cart.items
+    # on recupère le nombre des item et le total
+    total_p = 0
+    @items.map{ |item| total_p+= item.price}
+    @totals = [@items.length, total_p]
   end
 
 
