@@ -1,0 +1,18 @@
+<h1>commande </h1>
+<ul>
+  <% unless  @orders.nil?%>
+    <% @orders.each do |order|%>
+      <li>
+        <% order.items.each do |item| %>
+          Nom <strong><%= item.title %></strong>
+        <% end  %>
+      </li>
+
+
+    <% end %>
+
+    <% else  %>
+
+    <h3>Pas de commandes pour l'instant</h3>
+  <% end  %>
+</ul>

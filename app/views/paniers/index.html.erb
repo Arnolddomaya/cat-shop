@@ -1,6 +1,9 @@
 <h1>Panier de <%= current_user.email %></h1>
 
 <h3>Total : <%= @totals[0] %> produits, coût <%= @totals[1] %></h3>
+<% if @totals[0] > 0%>
+  <h3><%= link_to "| Passer la commande |",  order_path(cart_id: @cart.id,), method: :post %></h3>
+<% end %>
 <!-- liste des items -->
 <%= render "layouts/list_items" %>
 <!-- End liste des items -->

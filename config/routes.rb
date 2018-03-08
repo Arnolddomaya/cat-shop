@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'items/index'
 
+
   get 'items/show'
   root "items#index"
 
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
   get    "/add",       to: "adding#create"
   delete "/remove",     to: "adding#destroy"
 
+  post   "/order",       to: "orders#create"
+  get    "/order",       to: "orders#create"
+  get "orders/index", as: "orders_list"
 end

@@ -1,13 +1,21 @@
-class AddingController < ApplicationController
+class OrdersController < ApplicationController
   before_action :authenticate
 
-  
+  def index
+    @orders = current_user.orders
+
+
+  end
+
 
   def create
-    @item = Item.find(params[:item_id])
-    current_user.cart.items  <<  @item
-    flash[:success] = "Bien ajouté au panier"
-    redirect_to @item
+    order = Order.new(title: 'order user #{current_user.id}')
+    order.items = current_user.cart.items
+    current_user.cart.items  = []
+    current_user.orders << order
+
+    flash[:success] = "Commande emise! "
+    redirect_to orders_list_path
   end
 
   def destroy
@@ -28,5 +36,4 @@ class AddingController < ApplicationController
         redirect_to new_user_session_path
       end
     end
-
 end
