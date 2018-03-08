@@ -1,10 +1,15 @@
 <h1>commande </h1>
 <ul>
   <% unless  @orders.nil?%>
-    <% @orders.each do |order|%>
+    <% @orders.each do |order|
+
+      total_prix = 0
+      order.items.map{ |item| total_prix+= item.price}
+    %>
       <li>
+        <h3>Commande du  <strong><%= order.updated_at %></strong>,  total <strong><%= total_prix %></strong> euros</h3>
         <% order.items.each do |item| %>
-          Nom <strong><%= item.title %></strong>
+          <p>Produit <strong><%= item.title %></strong>,    Prix <strong><%= item.price %> euros</strong></p>
         <% end  %>
       </li>
 

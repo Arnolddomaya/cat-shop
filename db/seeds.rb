@@ -11,8 +11,11 @@ my_users << User.create( email:"dodo@gmail.com", password:"motdepasse", password
 my_users << User.create( email:"dada@gmail.com", password:"motdepasse", password_confirmation:"motdepasse")
 
 my_users.each do |user|
-   user.cart = Cart.new(title: "panier User_#{user.id}")
+   cart = Cart.new(title: "panier User_#{user.id}")
    user.save
+   user.cart = cart
+   cart.save
+
 end
 
 

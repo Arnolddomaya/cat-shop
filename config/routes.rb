@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post   "/add",       to: "adding#create"
   get    "/add",       to: "adding#create"
   delete "/remove",     to: "adding#destroy"
+  get "/remove",     to: "adding#destroy"
 
   post   "/order",       to: "orders#create"
   get    "/order",       to: "orders#create"
